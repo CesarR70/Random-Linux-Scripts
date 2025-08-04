@@ -59,9 +59,10 @@ Sets consistent ownership and group permissions for shared directories. Especial
 
 Automates the creation of a new share directory and users for Samba
 
-⚙️ Customization: Update paths in the script to match your shared directories & desired user/groups
+⚙️ Customization: 
+Update paths in the script to match your shared directories & desired user/groups
 
-Modify ShareDir= FileOwner= ShareUser= ShareGroup= variables to suit your specific ownership and permission model.
+    Modify ShareDir= FileOwner= ShareUser= ShareGroup= variables to suit your specific ownership and permission model.
 
 🧪 Usage ./SambaInitialConfig.sh.sh
 
