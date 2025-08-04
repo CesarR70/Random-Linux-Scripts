@@ -9,7 +9,7 @@ A lightweight collection of bash scripts created to simplify and automate common
 ### 1. `dl.sh` — YouTube Audio/Video Downloader
 Automates the process of downloading content from YouTube by prompting the user to choose between audio or full video downloads.
 
- 🔧 Requirements
+ 🔧 Requirements:
 - [`yt-dlp`](https://github.com/yt-dlp/yt-dlp)
 
  💡 Installation:
@@ -26,7 +26,7 @@ You'll be prompted to choose audio or video after passing the URL.
 
 Takes one or more image URLs and downloads them, converting each to .png format.
 
-🔧 Requirements
+🔧 Requirements:
     ImageMagick
 
 💡 Installation:
@@ -44,7 +44,7 @@ Checks if your Linux system requires a reboot (specifically looks for /var/run/r
 ### 4. 'set-share-permissions.sh' — File/Directory Permission Automator
 Sets consistent ownership and group permissions for shared directories. Especially useful for Samba/NFS shared folders.
 
-⚙️ Customization
+⚙️ Customization:
     Update paths in the script to match your shared directories.
 
     Modify chown and chmod commands to suit your specific ownership and permission model.
