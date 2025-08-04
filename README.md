@@ -47,7 +47,7 @@ Sets consistent ownership and group permissions for shared directories. Especial
 ⚙️ Customization:
     Update paths in the script to match your shared directories.
 
-    Modify chown and chmod commands to suit your specific ownership and permission model.
+    Modify OWNER= and GROUP= variables to suit your specific ownership and permission model.
     
 🧪 Usage
 ./set-share-permissions.sh
