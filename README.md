@@ -27,10 +27,13 @@ You'll be prompted to choose audio or video after passing the URL.
 Takes one or more image URLs and downloads them, converting each to .png format.
 
 🔧 Requirements:
-    ImageMagick
+    ImageMagick & gallery-dl
 
 💡 Installation:
+
 sudo apt update && sudo apt install imagemagick
+
+sudo apt update && sudo apt install gallery-dl
 
 🧪 Usage
 ./gdl.sh
