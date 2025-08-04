@@ -52,15 +52,16 @@ Sets consistent ownership and group permissions for shared directories. Especial
 🧪 Usage
 ./set-share-permissions.sh
 
-📂 Clone This Repo
+📂 Clone This Repo:
+
 git clone https://github.com/CesarR70/Random-Linux-Scripts
+
 cd Random-Linux-Scripts
 
-🧼 Notes
+🧼 Note:
     Each script is meant to be simple, readable, and easily modifiable.
     
-    Ensure you mark the scripts as executable before running:
-chmod +x scriptname.sh
+    Ensure you mark the scripts as executable before running: chmod +x scriptname.sh
 
 🐧 Tested On
     Debian 12 Bookworm
