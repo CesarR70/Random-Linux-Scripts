@@ -41,11 +41,11 @@ echo "All Done!"
 #comment = Media Share folder
 #path = /mnt/Media
 #veto files = /lost+found
-#valid users = share, cesar
+#valid users = share, owner
 #read only = yes
 #write list = owner
 #browsable = yes
-#create mask = 770
+#create mask = 750
 #directory mask = 0771
 #public = no
 #guest ok = no
