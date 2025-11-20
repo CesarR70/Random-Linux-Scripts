@@ -1,83 +1,166 @@
 # 🛠️ Shell Script Toolbox
 
-A lightweight collection of bash scripts created to simplify and automate common, repetitive tasks across Linux systems. Each script is standalone and designed to help streamline small but frequent jobs, from media downloading to system checks and permission management.
+A lightweight collection of bash scripts designed to simplify and automate common tasks across Linux systems. Each script is standalone, well-documented, and focused on streamlining repetitive operations—from media downloading to system maintenance and permission management.
+
+---
+
+## 📋 Table of Contents
+
+- [Available Scripts](#-available-scripts)
+- [Installation](#-installation)
+- [Tested Environments](#-tested-environments)
+- [Contributing](#-contributing)
 
 ---
 
 ## 📜 Available Scripts
 
-### 1. `dl.sh` — YouTube Audio/Video Downloader
-Automates the process of downloading content from YouTube by prompting the user to choose between audio or full video downloads.
+### 1. YouTube Audio/Video Downloader (`dl.sh`)
 
- 🔧 Requirements:
+Automates content downloading from YouTube with an interactive prompt to select between audio-only or full video downloads.
+
+**Requirements:**
 - [`yt-dlp`](https://github.com/yt-dlp/yt-dlp)
 
- 💡 Installation:
+**Installation:**
+```bash
 sudo apt update && sudo apt install yt-dlp
+```
+*For other operating systems, refer to [yt-dlp's installation guide](https://github.com/yt-dlp/yt-dlp#installation).*
 
-(For other OSes, refer to yt-dlp's installation instructions)
-
-🧪 Usage
+**Usage:**
+```bash
+chmod +x dl.sh
 ./dl.sh
+```
+You'll be prompted to enter a URL and choose between audio or video format.
 
-You'll be prompted to choose audio or video after passing the URL.
+---
 
-### 2. 'gdl.sh' (Gallery Downloader) — Bulk Image Downloader & PNG Converter
+### 2. Bulk Image Downloader (`gdl.sh`)
 
-Takes one or more image URLs and downloads them, converting each to .png format.
+Downloads one or more images from provided URLs and automatically converts them to PNG format.
 
-🔧 Requirements:
-    ImageMagick & gallery-dl
+**Requirements:**
+- `ImageMagick`
+- `gallery-dl`
 
-💡 Installation:
+**Installation:**
+```bash
+sudo apt update && sudo apt install imagemagick gallery-dl
+```
 
-sudo apt update && sudo apt install imagemagick
-
-sudo apt update && sudo apt install gallery-dl
-
-🧪 Usage
+**Usage:**
+```bash
+chmod +x gdl.sh
 ./gdl.sh
+```
+Enter image URLs when prompted. All downloads will be converted to `.png` format.
 
-### 3. 'reboot-required-check.sh' — Reboot Status Notifier
-Checks if your Linux system requires a reboot (specifically looks for /var/run/reboot-required).
+---
 
-🧪 Usage
+### 3. Reboot Status Checker (`reboot-required-check.sh`)
+
+Checks whether your Linux system requires a reboot by detecting the presence of `/var/run/reboot-required`.
+
+**Requirements:**
+- None (uses standard Linux utilities)
+
+**Usage:**
+```bash
+chmod +x reboot-required-check.sh
 ./reboot-required-check.sh
+```
 
-### 4. 'set-share-permissions.sh' — File/Directory Permission Automator
-Sets consistent ownership and group permissions for shared directories. Especially useful for Samba/NFS shared folders.
+---
 
-⚙️ Customization:
-    Update paths in the script to match your shared directories.
+### 4. Shared Directory Permission Manager (`set-share-permissions.sh`)
 
-    Modify OWNER= and GROUP= variables to suit your specific ownership and permission model.
-    
-🧪 Usage
-./set-share-permissions.sh
+Automatically sets consistent ownership and group permissions for shared directories. Particularly useful for Samba and NFS shared folders.
 
-### 5. 'SambaInitialConfig.sh' — Samba User & Directory Automator
+**Requirements:**
+- Root or sudo privileges
 
-Automates the creation of a new share directory and users for Samba
+**Configuration:**
 
-⚙️ Customization: 
-Update paths in the script to match your shared directories & desired user/groups
+Before running, edit the script to customize:
+```bash
+OWNER="your_owner"
+GROUP="your_group"
+```
+Update the directory paths to match your shared directories.
 
-    Modify ShareDir= FileOwner= ShareUser= ShareGroup= variables to suit your specific ownership and permission model.
+**Usage:**
+```bash
+chmod +x set-share-permissions.sh
+sudo ./set-share-permissions.sh
+```
 
-🧪 Usage ./SambaInitialConfig.sh.sh
+---
 
-📂 Clone This Repo:
+### 5. Samba Share Automator (`SambaInitialConfig.sh`)
 
+Automates the creation of Samba share directories and user accounts with proper permissions.
+
+**Requirements:**
+- Samba installed and configured
+- Root or sudo privileges
+
+**Configuration:**
+
+Before running, edit the script to customize:
+```bash
+ShareDir="/path/to/share"
+FileOwner="owner_name"
+ShareUser="samba_user"
+ShareGroup="samba_group"
+```
+
+**Usage:**
+```bash
+chmod +x SambaInitialConfig.sh
+sudo ./SambaInitialConfig.sh
+```
+
+---
+
+## 📂 Installation
+
+Clone this repository:
+```bash
 git clone https://github.com/CesarR70/Random-Linux-Scripts
-
 cd Random-Linux-Scripts
+```
 
-🧼 Note:
-    Each script is meant to be simple, readable, and easily modifiable.
-    
-    Ensure you mark the scripts as executable before running: chmod +x scriptname.sh
+Make scripts executable:
+```bash
+chmod +x *.sh
+```
 
-🐧 Tested On
-    Debian 12 Bookworm
+---
 
-    Should be compatible with most Unix-like environments
+## 🐧 Tested Environments
+
+- **Primary:** Debian 12 (Bookworm)
+- **Compatibility:** Most Unix-like systems (Ubuntu, Fedora, Arch, etc.)
+
+---
+
+## 📝 Notes
+
+- Each script is designed to be simple, readable, and easily customizable
+- Scripts requiring configuration have clearly marked variables at the top
+- Always review scripts before running with elevated privileges
+- Contributions and improvements are welcome!
+
+---
+
+## 🤝 Contributing
+
+Feel free to submit issues, fork the repository, and create pull requests for any improvements.
+
+---
+
+## 📄 License
+
+This project is open source and available under the MIT License.
